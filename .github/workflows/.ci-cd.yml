@@ -36,9 +36,7 @@ jobs:
 
       - name: Deploy to production
         run: |
-        cd /home/ds/Desktop/prk3
-        git pull
-        pip install pytest
-        python3 main.py
-        
-
+          cd /home/ds/Desktop/prk3
+          git pull
+          pip install pytest
+          python3 main.py

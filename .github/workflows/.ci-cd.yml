@@ -27,7 +27,7 @@ jobs:
           python -m unittest discover -s tests
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: test
     if: success() # Деплой выполняется только при успешном прохождении тестов
     steps:
@@ -36,4 +36,9 @@ jobs:
 
       - name: Deploy to production
         run: |
-          echo "Deploying to production server..."
+        cd /home/ds/Desktop/prk3
+        git pull
+        pip install pytest
+        python3 main.py
+        
+

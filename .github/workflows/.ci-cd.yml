@@ -1,0 +1,44 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - master # Или укажите вашу основную ветку
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8" # Укажите нужную версию Python
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest
+
+      - name: Run tests
+        run: |
+          pytest
+
+  deploy:
+    runs-on: self-hosted
+    needs: test
+    if: success() # Деплой выполняется только при успешном прохождении
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Deploy to production
+        run: |
+          cd /home/ds/Desktop/prk3
+          source venv/bin/activate
+          git pull origin master
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          python3 main.py

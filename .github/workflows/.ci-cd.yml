@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master # Или укажите вашу основную ветку
-      - main # Если основная ветка называется main, добавьте её
+      - main # Добавьте, если основная ветка называется main
 
 jobs:
   test:
@@ -39,7 +39,6 @@ jobs:
         run: |
           cd /home/ds/Desktop/prk3
           source venv/bin/activate
-          git checkout master # Убедитесь, что вы на нужной ветке
           git pull origin master
           pip install --upgrade pip
           pip install -r requirements.txt

@@ -3,8 +3,7 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - master # Или укажите вашу основную ветку
-      - main # Добавьте, если основная ветка называется main
+      - master
 
 jobs:
   test:

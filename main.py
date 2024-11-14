@@ -9,7 +9,7 @@ def on_calculate():
     income = float(entry_income.get())
     expenses = float(entry_expenses.get())
     balance = calculate_balance(income, expenses)
-    label_result.config(text=f"балdsdsdааанс: {balance}")
+    label_result.config(text=f"балkfdolgk;ldfjgанс: {balance}")
 
 
 if __name__ == "__main__":

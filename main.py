@@ -14,7 +14,7 @@ def on_calculate():
 
 if __name__ == "__main__":
     app = tk.Tk()
-    app.title("Калькулятор финансов")
+    app.title("Калькуляdsdsdsтор финансов")
 
     tk.Label(app, text="Доходы:").pack()
     entry_income = tk.Entry(app)
